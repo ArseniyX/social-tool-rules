@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "updated": "2026-11-06",
+  "sites": [
+    {
+      "id": "x",
+      "name": "X / Twitter",
+      "matches": [
+        "*://x.com/*",
+        "*://twitter.com/*"
+      ],
+      "hosts": [
+        "x.com",
+        "twitter.com"
+      ],
+      "selectors": {
+        "feed": [
+          "[data-testid=\"primaryColumn\"] [aria-label^=\"Timeline: Your Home\"]"
+        ],
+        "media": [
+          "[data-testid=\"tweetPhoto\"]",
+          "[data-testid=\"videoPlayer\"]",
+          "[data-testid=\"card.wrapper\"]"
+        ],
+        "status": [
+          "[data-testid=\"like\"] span",
+          "[data-testid=\"retweet\"] span",
+          "[data-testid=\"reply\"] span",
+          "[data-testid=\"app-text-transition-container\"]",
+          "[aria-label=\"Trending\"]"
+        ]
+      }
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "hosts": [
+        "facebook.com"
+      ],
+      "selectors": {
+        "feed": [
+          "[role=\"feed\"]"
+        ],
+        "media": [
+          "[role=\"article\"] img",
+          "[role=\"article\"] video"
+        ],
+        "status": [
+          "[aria-label=\"Stories\"]",
+          "[role=\"complementary\"]",
+          "[aria-label*=\"Active now\" i]"
+        ]
+      }
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "matches": [
+        "*://*.instagram.com/*"
+      ],
+      "hosts": [
+        "instagram.com"
+      ],
+      "selectors": {
+        "feed": [
+          "main[role=\"main\"] article"
+        ],
+        "media": [
+          "article img",
+          "article video"
+        ],
+        "status": [
+          "[role=\"menu\"]",
+          "section a[href*=\"liked_by\"]",
+          "div[role=\"presentation\"] canvas"
+        ]
+      }
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "matches": [
+        "*://*.reddit.com/*"
+      ],
+      "hosts": [
+        "reddit.com"
+      ],
+      "selectors": {
+        "feed": [
+          "shreddit-feed",
+          "#siteTable"
+        ],
+        "media": [
+          "shreddit-post img",
+          "shreddit-post video",
+          "shreddit-player",
+          ".thing .thumbnail"
+        ],
+        "status": [
+          "faceplate-number",
+          "shreddit-post-flair",
+          "aside[aria-label*=\"Popular\" i]"
+        ]
+      }
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "matches": [
+        "*://*.linkedin.com/*"
+      ],
+      "hosts": [
+        "linkedin.com"
+      ],
+      "selectors": {
+        "feed": [
+          "main .scaffold-finite-scroll",
+          ".feed-shared-update-v2"
+        ],
+        "media": [
+          ".feed-shared-update-v2 img",
+          ".feed-shared-update-v2 video"
+        ],
+        "status": [
+          ".social-details-social-counts",
+          ".presence-entity__indicator",
+          ".msg-overlay-bubble-header__presence"
+        ]
+      }
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "hosts": [
+        "youtube.com"
+      ],
+      "selectors": {
+        "feed": [
+          "ytd-browse[page-subtype=\"home\"] #contents",
+          "ytd-watch-next-secondary-results-renderer"
+        ],
+        "media": [
+          "ytd-thumbnail img",
+          "ytd-thumbnail yt-image img"
+        ],
+        "status": [
+          "ytd-comments",
+          "#info-container #view-count",
+          "ytd-live-chat-frame"
+        ]
+      }
+    }
+  ]
+}
