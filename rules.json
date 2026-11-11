@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updated": "2026-11-06",
+  "version": 57,
+  "updated": "2026-11-11",
   "sites": [
     {
       "id": "x",
@@ -29,6 +29,79 @@
           "[data-testid=\"app-text-transition-container\"]",
           "[aria-label=\"Trending\"]"
         ]
+      },
+      "elements": [
+        {
+          "id": "home-timeline",
+          "label": "Home timeline",
+          "selector": "[data-testid=\"primaryColumn\"] [aria-label^=\"Timeline: Your Home\"]",
+          "group": "feed"
+        },
+        {
+          "id": "right-sidebar",
+          "label": "Right sidebar",
+          "selector": "[aria-label=\"Trending\"]",
+          "group": "status"
+        },
+        {
+          "id": "explore",
+          "label": "Explore",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"AppTabBar_Explore_Link\"]"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"AppTabBar_Notifications_Link\"]"
+        },
+        {
+          "id": "follow",
+          "label": "Follow",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"AppTabBar_Follow_Link\"]"
+        },
+        {
+          "id": "chat",
+          "label": "Chat",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"AppTabBar_DirectMessage_Link\"]"
+        },
+        {
+          "id": "calls",
+          "label": "Calls",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"AppTabBar_Calls_Link\"]"
+        },
+        {
+          "id": "grok-menu",
+          "label": "Grok (menu)",
+          "selector": "nav[aria-label=\"Primary\"] a[href=\"/i/grok\"]"
+        },
+        {
+          "id": "premium-menu",
+          "label": "Premium (menu)",
+          "selector": "nav[aria-label=\"Primary\"] a[data-testid=\"premium-signup-tab\"]"
+        },
+        {
+          "id": "today-s-news",
+          "label": "Today's News",
+          "selector": "[data-testid=\"sidebarColumn\"] div:has(> [data-testid=\"news_sidebar\"])"
+        },
+        {
+          "id": "who-to-follow",
+          "label": "Who to follow",
+          "selector": "[data-testid=\"sidebarColumn\"] aside[aria-label=\"Who to follow\"]"
+        },
+        {
+          "id": "premium-upsell",
+          "label": "Premium upsell",
+          "selector": "[data-testid=\"sidebarColumn\"] aside[aria-label=\"Subscribe to Premium\"]"
+        },
+        {
+          "id": "grok-drawer",
+          "label": "Grok drawer",
+          "selector": "[data-testid=\"GrokDrawer\"]"
+        }
+      ],
+      "editButton": {
+        "anchor": "nav[aria-label=\"Primary\"]",
+        "position": "prepend"
       }
     },
     {
@@ -53,7 +126,27 @@
           "[role=\"complementary\"]",
           "[aria-label*=\"Active now\" i]"
         ]
-      }
+      },
+      "elements": [
+        {
+          "id": "news-feed",
+          "label": "News feed",
+          "selector": "[role=\"feed\"]",
+          "group": "feed"
+        },
+        {
+          "id": "stories",
+          "label": "Stories",
+          "selector": "[aria-label=\"Stories\"]",
+          "group": "status"
+        },
+        {
+          "id": "right-sidebar",
+          "label": "Right sidebar",
+          "selector": "[role=\"complementary\"]",
+          "group": "status"
+        }
+      ]
     },
     {
       "id": "instagram",
@@ -77,7 +170,15 @@
           "section a[href*=\"liked_by\"]",
           "div[role=\"presentation\"] canvas"
         ]
-      }
+      },
+      "elements": [
+        {
+          "id": "feed-posts",
+          "label": "Feed posts",
+          "selector": "main[role=\"main\"] article",
+          "group": "feed"
+        }
+      ]
     },
     {
       "id": "reddit",
@@ -90,7 +191,7 @@
       ],
       "selectors": {
         "feed": [
-          "shreddit-feed",
+          "shreddit-app:is([pagetype=\"home\"],[pagetype=\"popular\"],[pagetype=\"all\"]) shreddit-feed",
           "#siteTable"
         ],
         "media": [
@@ -102,8 +203,137 @@
         "status": [
           "faceplate-number",
           "shreddit-post-flair",
-          "aside[aria-label*=\"Popular\" i]"
+          "aside[aria-label*=\"Popular\" i]",
+          "[noun=\"games_drawer\"]",
+          "[noun=\"games_drawer\"] + hr",
+          "dynamic-badge[data-id=\"notification-count-element\"]"
         ]
+      },
+      "elements": [
+        {
+          "id": "feed",
+          "label": "Feed",
+          "selector": "shreddit-app:is([pagetype=\"home\"],[pagetype=\"popular\"],[pagetype=\"all\"]) shreddit-feed",
+          "group": "feed"
+        },
+        {
+          "id": "feed-tabs",
+          "label": "Feed tabs",
+          "selector": "#interest-feed-header"
+        },
+        {
+          "id": "sponsored-posts",
+          "label": "Sponsored posts",
+          "selector": "shreddit-ad-post",
+          "group": "status"
+        },
+        {
+          "id": "post-media",
+          "label": "Post media",
+          "selector": "shreddit-post shreddit-player"
+        },
+        {
+          "id": "right-sidebar",
+          "label": "Right sidebar",
+          "selector": "#right-sidebar-container"
+        },
+        {
+          "id": "recent-posts",
+          "label": "Recent posts",
+          "selector": "recent-posts"
+        },
+        {
+          "id": "popular-sidebar",
+          "label": "Popular sidebar",
+          "selector": "aside[aria-label*=\"Popular\" i]",
+          "group": "status"
+        },
+        {
+          "id": "popular",
+          "label": "Popular",
+          "selector": "left-nav-top-section >>> #popular-posts"
+        },
+        {
+          "id": "news",
+          "label": "News",
+          "selector": "left-nav-top-section >>> #news-posts"
+        },
+        {
+          "id": "explore",
+          "label": "Explore",
+          "selector": "left-nav-top-section >>> #explore-communities"
+        },
+        {
+          "id": "start-a-community",
+          "label": "Start a community",
+          "selector": "left-nav-top-section li.left-nav-create-community-button"
+        },
+        {
+          "id": "games-drawer",
+          "label": "Games drawer",
+          "selector": "faceplate-tracker[noun=\"games_drawer\"], faceplate-tracker[noun=\"games_drawer\"] + hr",
+          "group": "status"
+        },
+        {
+          "id": "custom-feeds",
+          "label": "Custom feeds",
+          "selector": "faceplate-expandable-section-helper:has(#multireddits_section) > details, faceplate-expandable-section-helper:has(#multireddits_section) + hr"
+        },
+        {
+          "id": "recent-communities",
+          "label": "Recent communities",
+          "selector": "#recent-communities-section"
+        },
+        {
+          "id": "communities",
+          "label": "Communities",
+          "selector": "faceplate-expandable-section-helper:has(#communities_section) > details, hr:has(+ faceplate-loader[name^=\"LeftNavResources\"])"
+        },
+        {
+          "id": "resources",
+          "label": "Resources",
+          "selector": "nav[aria-label=\"Reddit resources\"]"
+        },
+        {
+          "id": "logo",
+          "label": "Logo",
+          "selector": "#reddit-logo"
+        },
+        {
+          "id": "search",
+          "label": "Search",
+          "selector": "reddit-search-large"
+        },
+        {
+          "id": "advertise-button",
+          "label": "Advertise button",
+          "selector": "advertise-button"
+        },
+        {
+          "id": "chat",
+          "label": "Chat",
+          "selector": "reddit-chat-header-button"
+        },
+        {
+          "id": "create-post",
+          "label": "Create post",
+          "selector": "create-post-entry-point-wrapper"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications",
+          "selector": "#notifications-inbox-button"
+        },
+        {
+          "id": "notification-badge",
+          "label": "Notification badge",
+          "selector": "dynamic-badge[data-id=\"notification-count-element\"]",
+          "group": "status"
+        }
+      ],
+      "editButton": {
+        "anchor": "reddit-header-large nav > div:last-child",
+        "position": "prepend"
       }
     },
     {
@@ -117,18 +347,114 @@
       ],
       "selectors": {
         "feed": [
-          "main .scaffold-finite-scroll",
-          ".feed-shared-update-v2"
+          "[data-testid=\"mainFeed\"] > div:not(:first-child)",
+          "[data-testid=\"mainFeed\"] [role=\"listitem\"][componentkey^=\"update-card\"]"
         ],
-        "media": [
-          ".feed-shared-update-v2 img",
-          ".feed-shared-update-v2 video"
-        ],
+        "media": [],
         "status": [
-          ".social-details-social-counts",
-          ".presence-entity__indicator",
-          ".msg-overlay-bubble-header__presence"
+          "aside[aria-label=\"Aside\"]",
+          "span:has(> svg#bell-fill-medium) > span"
         ]
+      },
+      "elements": [
+        {
+          "id": "linkedin-logo",
+          "label": "LinkedIn logo",
+          "selector": "header [role=\"button\"] > svg[id^=\"linkedin-bug\"] > path",
+          "once": true
+        },
+        {
+          "id": "feed-posts",
+          "label": "Feed posts",
+          "selector": "[data-testid=\"mainFeed\"] [role=\"listitem\"][componentkey^=\"update-card\"]",
+          "group": "feed"
+        },
+        {
+          "id": "feed-tabs",
+          "label": "Feed tabs",
+          "selector": "main div:has(> div > div[data-display-contents=\"true\"] > div[componentkey] > div[data-display-contents=\"true\"] > div[role=\"button\"] > div[aria-labelledby])"
+        },
+        {
+          "id": "start-a-post",
+          "label": "Start a post",
+          "selector": "[data-testid=\"mainFeed\"] > div:first-child > [role=\"listitem\"]"
+        },
+        {
+          "id": "left-sidebar",
+          "label": "Left sidebar",
+          "selector": "aside[aria-label=\"Sidebar\"]"
+        },
+        {
+          "id": "profile-stats",
+          "label": "Profile stats",
+          "selector": "aside[aria-label=\"Sidebar\"] > div > div > div > div:has(a[href*=\"/me/profile-views\"])"
+        },
+        {
+          "id": "my-pages",
+          "label": "My pages",
+          "selector": "aside[aria-label=\"Sidebar\"] > div > div > div > div[data-display-contents=\"true\"]:has(a[href*=\"/company/\"]) > div"
+        },
+        {
+          "id": "saved-items",
+          "label": "Saved items",
+          "selector": "aside[aria-label=\"Sidebar\"] > div > div > div > div:has(a[href*=\"/my-items/saved-posts\"])"
+        },
+        {
+          "id": "right-sidebar",
+          "label": "Right sidebar",
+          "selector": "aside[aria-label=\"Aside\"]",
+          "group": "status"
+        },
+        {
+          "id": "search",
+          "label": "Search",
+          "selector": "div[role=\"search\"]"
+        },
+        {
+          "id": "network",
+          "label": "Network",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> a[href*=\"/mynetwork\"])"
+        },
+        {
+          "id": "jobs",
+          "label": "Jobs",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> a[href*=\"/jobs/\"])"
+        },
+        {
+          "id": "messaging",
+          "label": "Messaging",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> a[href*=\"/messaging/\"])"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> a[href*=\"/notifications/\"])"
+        },
+        {
+          "id": "me-menu",
+          "label": "Me menu",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> button[aria-expanded] > span > figure)"
+        },
+        {
+          "id": "for-business",
+          "label": "For Business",
+          "selector": "[data-testid=\"primary-nav\"] li:has(> button[aria-expanded]):not(:has(figure))"
+        },
+        {
+          "id": "premium",
+          "label": "Premium",
+          "selector": "[data-testid=\"primary-nav\"] a[href*=\"/premium/products\"]:not(p a)"
+        },
+        {
+          "id": "notification-badge",
+          "label": "Notification badge",
+          "selector": "span:has(> svg#bell-fill-medium) > span",
+          "group": "status"
+        }
+      ],
+      "editButton": {
+        "anchor": "[data-testid=\"primary-nav\"] ul:has(> li > a[href*=\"/mynetwork\"])",
+        "position": "append"
       }
     },
     {
@@ -142,18 +468,301 @@
       ],
       "selectors": {
         "feed": [
-          "ytd-browse[page-subtype=\"home\"] #contents",
-          "ytd-watch-next-secondary-results-renderer"
+          "ytd-watch-next-secondary-results-renderer",
+          "ytd-browse[page-subtype='home'] ytd-rich-grid-renderer",
+          "ytd-browse[page-subtype='home'] ytd-feed-filter-chip-bar-renderer"
         ],
         "media": [
-          "ytd-thumbnail img",
-          "ytd-thumbnail yt-image img"
+          "yt-thumbnail-view-model",
+          "ytd-thumbnail img"
         ],
         "status": [
           "ytd-comments",
           "#info-container #view-count",
-          "ytd-live-chat-frame"
+          "ytd-live-chat-frame",
+          "ytd-rich-item-renderer:has(ytd-ad-slot-renderer)",
+          "ytd-rich-section-renderer:has(ytd-statement-banner-renderer)"
         ]
+      },
+      "elements": [
+        {
+          "id": "shorts-shelf",
+          "label": "Shorts shelf",
+          "selector": "ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])",
+          "link": "shorts"
+        },
+        {
+          "id": "sponsored-cards",
+          "label": "Sponsored cards",
+          "selector": "ytd-rich-item-renderer:has(ytd-ad-slot-renderer)",
+          "group": "status"
+        },
+        {
+          "id": "premium-banner",
+          "label": "Premium banner",
+          "selector": "ytd-rich-section-renderer:has(ytd-statement-banner-renderer)",
+          "group": "status"
+        },
+        {
+          "id": "up-next",
+          "label": "Up next",
+          "selector": "ytd-watch-next-secondary-results-renderer",
+          "group": "feed"
+        },
+        {
+          "id": "comments",
+          "label": "Comments",
+          "selector": "ytd-comments",
+          "group": "status"
+        },
+        {
+          "id": "home-feed-grid",
+          "label": "Home feed grid",
+          "selector": "ytd-browse[page-subtype='home'] ytd-rich-grid-renderer",
+          "group": "feed"
+        },
+        {
+          "id": "shorts-sidebar",
+          "label": "Shorts (sidebar)",
+          "selector": "ytd-guide-entry-renderer:has(a[title=\"Shorts\"]), ytd-guide-entry-renderer:has(a[href^=\"/shorts\"]), ytd-mini-guide-entry-renderer:has(a[href^=\"/shorts\"]), ytd-mini-guide-entry-renderer:has(a[title=\"Shorts\"])",
+          "link": "shorts"
+        },
+        {
+          "id": "shorts-shelves-search",
+          "label": "Shorts shelves (search)",
+          "selector": "grid-shelf-view-model:has(a[href^=\"/shorts\"])",
+          "link": "shorts"
+        },
+        {
+          "id": "playables-games",
+          "label": "Playables games",
+          "selector": "ytd-rich-section-renderer:has(a[href*=\"playables\"])"
+        },
+        {
+          "id": "sidebar-subscriptions",
+          "label": "Sidebar: Subscriptions",
+          "selector": "ytd-guide-section-renderer:has(a[href=\"/feed/subscriptions\"])"
+        },
+        {
+          "id": "sidebar-you",
+          "label": "Sidebar: You",
+          "selector": "ytd-guide-section-renderer:has(a[href=\"/feed/you\"])"
+        },
+        {
+          "id": "sidebar-explore",
+          "label": "Sidebar: Explore",
+          "selector": "ytd-guide-section-renderer:has(a[href=\"/gaming\"])"
+        },
+        {
+          "id": "sidebar-more-from-youtube",
+          "label": "Sidebar: More from YouTube",
+          "selector": "ytd-guide-section-renderer:has(a[href=\"/premium\"])"
+        },
+        {
+          "id": "sidebar-report-history",
+          "label": "Sidebar: Report history",
+          "selector": "ytd-guide-section-renderer:has(a[href=\"/reporthistory\"])"
+        },
+        {
+          "id": "sidebar-footer-links",
+          "label": "Sidebar: Footer links",
+          "selector": "ytd-guide-renderer #footer"
+        },
+        {
+          "id": "logo",
+          "label": "Logo",
+          "selector": "ytd-masthead ytd-topbar-logo-renderer"
+        },
+        {
+          "id": "voice-search",
+          "label": "Voice search",
+          "selector": "ytd-masthead #voice-search-button"
+        },
+        {
+          "id": "create-button",
+          "label": "Create button",
+          "selector": "ytd-masthead #buttons > ytd-button-renderer"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications",
+          "selector": "ytd-masthead ytd-notification-topbar-button-renderer"
+        },
+        {
+          "id": "shorts-shelf-channel",
+          "label": "Shorts shelf (channel)",
+          "selector": "ytd-reel-shelf-renderer",
+          "link": "shorts"
+        },
+        {
+          "id": "shorts-tab-channel",
+          "label": "Shorts tab (channel)",
+          "selector": "yt-tab-shape[tab-title=\"Shorts\"]",
+          "link": "shorts"
+        }
+      ],
+      "editButton": {
+        "anchor": "ytd-masthead #buttons"
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "matches": [
+        "*://github.com/*"
+      ],
+      "hosts": [
+        "github.com"
+      ],
+      "selectors": {
+        "feed": [
+          "#dashboard .news"
+        ],
+        "media": [],
+        "status": [
+          "aside[aria-label=\"Explore\"]",
+          ".js-yearly-contributions",
+          "nav[aria-label=\"Repository\"] a[href$=\"/issues\"] [class*=\"CounterLabel\"]",
+          "nav[aria-label=\"Repository\"] a[href$=\"/pulls\"] [class*=\"CounterLabel\"]",
+          "[data-testid=\"repo-header-actions\"] > li:has([data-testid^=\"notifications-\"])",
+          "[data-testid=\"repo-header-actions\"] > li:has([data-testid=\"star-button\"])",
+          "[data-testid=\"repo-header-actions\"] > li:has([data-testid=\"fork-button\"])",
+          "[class*=\"insightStats\"]"
+        ]
+      },
+      "elements": [
+        {
+          "id": "home-feed",
+          "label": "Home feed",
+          "selector": "#dashboard .news",
+          "group": "feed"
+        },
+        {
+          "id": "right-sidebar",
+          "label": "Right sidebar",
+          "selector": "aside[aria-label=\"Explore\"]"
+        },
+        {
+          "id": "promo-banner",
+          "label": "Promo banner",
+          "selector": "aside[aria-label=\"Explore\"] > div:first-child"
+        },
+        {
+          "id": "changelog",
+          "label": "Changelog",
+          "selector": "aside[aria-label=\"Explore\"] .dashboard-changelog"
+        },
+        {
+          "id": "left-sidebar",
+          "label": "Left sidebar",
+          "selector": "aside[aria-label=\"Dashboard menu\"]"
+        },
+        {
+          "id": "copilot-chat",
+          "label": "Copilot chat",
+          "selector": ".news .copilotPreview__container"
+        },
+        {
+          "id": "copilot-button",
+          "label": "Copilot button",
+          "selector": "[data-testid=\"top-nav-right\"] [data-component=\"ButtonGroup\"]:has(a[href=\"/copilot\"])",
+          "replaces": [
+            "copilot-header",
+            "copilot"
+          ]
+        },
+        {
+          "id": "contribution-graph",
+          "label": "Contribution graph",
+          "selector": ".js-yearly-contributions"
+        },
+        {
+          "id": "issues-count",
+          "label": "Issues count",
+          "selector": "nav[aria-label=\"Repository\"] a[href$=\"/issues\"] [class*=\"CounterLabel\"]"
+        },
+        {
+          "id": "pull-requests-count",
+          "label": "Pull requests count",
+          "selector": "nav[aria-label=\"Repository\"] a[href$=\"/pulls\"] [class*=\"CounterLabel\"]"
+        },
+        {
+          "id": "releases",
+          "label": "Releases",
+          "selector": "[class*=\"CodeViewSidebar\"] [class*=\"sidebarSection\"]:has(h2 a[href$=\"/releases\"])"
+        },
+        {
+          "id": "deployments",
+          "label": "Deployments",
+          "selector": "[class*=\"CodeViewSidebar\"] [class*=\"sidebarSection\"]:has(h2 a[href$=\"/deployments\"])"
+        },
+        {
+          "id": "used-by",
+          "label": "Used by",
+          "selector": "[class*=\"CodeViewSidebar\"] [class*=\"sidebarSection\"]:has(h2 a[href*=\"/network/dependents\"])"
+        },
+        {
+          "id": "contributors",
+          "label": "Contributors",
+          "selector": "[class*=\"CodeViewSidebar\"] [class*=\"sidebarSection\"]:has(h2 a[href*=\"/graphs/contributors\"])"
+        },
+        {
+          "id": "languages",
+          "label": "Languages",
+          "selector": "[class*=\"CodeViewSidebar\"] [class*=\"sidebarSection\"]:has(a[href*=\"/search?l=\"])"
+        },
+        {
+          "id": "github-logo",
+          "label": "GitHub logo",
+          "selector": "[data-testid=\"top-nav-left\"] a > svg.octicon-mark-github"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications",
+          "selector": "[data-testid=\"top-nav-right\"] a[href=\"/notifications\"]"
+        },
+        {
+          "id": "user-avatar",
+          "label": "User avatar",
+          "selector": "[data-testid=\"top-nav-right\"] [data-testid=\"github-avatar\"]"
+        },
+        {
+          "id": "all-avatars",
+          "label": "All avatars",
+          "selector": "img[data-component=\"Avatar\"], img.avatar, [data-testid=\"github-avatar\"]",
+          "once": true
+        },
+        {
+          "id": "repo-stats",
+          "label": "Repo stats",
+          "selector": "[data-testid=\"repo-header-actions\"] > li, [class*=\"insightStats\"]",
+          "once": true,
+          "replaces": [
+            "watch-button",
+            "fork-button",
+            "star-button",
+            "about-stats",
+            "watch-count",
+            "fork-count",
+            "star-count",
+            "stars-about",
+            "watching-about",
+            "forks-about"
+          ]
+        },
+        {
+          "id": "repo-title",
+          "label": "Repo title",
+          "selector": "[class*=\"TitleWrapper\"] .f3",
+          "replaces": [
+            "repo-icon",
+            "visibility-badge"
+          ]
+        }
+      ],
+      "editButton": {
+        "anchor": "[data-testid=\"top-nav-right\"]",
+        "position": "prepend"
       }
     }
   ]
